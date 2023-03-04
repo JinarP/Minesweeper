@@ -5,7 +5,7 @@ let rows = 8;
 let column = 8;
 
 let minesNumber;
-let cellCliked = 0;
+let cellCliked = 1;
 let gameOver = false;
 
 function  startGame () {
