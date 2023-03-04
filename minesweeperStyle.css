@@ -1,0 +1,91 @@
+body {
+    background-color: #6f9a3c;
+}
+#bombs {
+    text-align: center;
+}
+#table {
+    width: 404px;
+    height: 404px;
+    border: 10px solid rgba(78, 126, 197, 0.66);
+    background-color: lightgray;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#table div {
+    height: 48px;
+    width: 48px;
+    border: 1px solid #9f9797;
+    font-size: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#choose {
+    position: fixed;
+    font-weight: bold;
+    font-size: 20px;
+    left: 4em;
+    top: 110px;
+    height: 50px;
+    width: 50px;
+}
+
+#reset {
+    display: flex;
+    position: fixed;
+    left: 45em;
+    height: 60px;
+    align-content: center;
+    align-items: center;
+}
+
+#mesage {
+    position: fixed;
+    color: firebrick;
+    font-weight: bold;
+    font-size: 40px;
+    right: 4em;
+    top: 110px;
+    height: 100px;
+    width: 100px;
+}
+
+.cliked {
+    background-color: grey;
+}
+
+.d1 {
+    color: green;
+}
+
+.d2 {
+    color: blue;
+}
+
+.d3 {
+    color: blueviolet;
+}
+
+.d4 {
+    color: firebrick;
+}
+
+.d5 {
+    color: navy;
+}
+
+.d6 {
+    color: sandybrown;
+}
+
+.d7 {
+    color: black;
+}.
+
+ d8 {
+    color: deeppink;
+}
