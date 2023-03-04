@@ -5,7 +5,7 @@ let rows = 8;
 let column = 8;
 
 let minesNumber;
-let cellCliked = 1;
+let cellCliked = 0;
 let gameOver = false;
 
 function  startGame () {
@@ -43,7 +43,6 @@ function  clikCell() {
     if (gameOver || this.classList.contains("cliked")) {
         return;
     }
-
     let cell = this;
     if (bombLocation.includes(cell.id)) {
         document.getElementById("mesage").innerText =
@@ -73,8 +72,21 @@ function showBombs () {
 
 function checkBombs (row, coll) {
 
+    if (table[row][coll].classList.contains("cliked")) {
+        return;
+    }
+
     table[row][coll].classList.add("cliked");
     ++cellCliked;
+
+    if (cellCliked == rows * column - minesNumber) {
+        document.getElementById("mesage").innerText =
+            "YOU WIN"
+        gameOver = true;
+        showBombs();
+        return;
+    }
+
     let bombNumber = 0;
 
     bombNumber += checkCell(row - 1, coll - 1);
@@ -103,18 +115,11 @@ function checkBombs (row, coll) {
         checkBombs(row + 1, coll - 1);
         checkBombs(row + 1, coll);
         checkBombs(row + 1, coll + 1);
-    }
-
-    if (cellCliked == rows * column - minesNumber) {
-        document.getElementById("mesage").innerText =
-            "YOU WIN"
-        gameOver = true;
-        showBombs();
+        console.log(cellCliked);
     }
 }
 
 function checkCell (row, coll) {
-
     if (bombLocation.includes(row.toString() + "-" + coll.toString())) {
         return 1;
     } else {
